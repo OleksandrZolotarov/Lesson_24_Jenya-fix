@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:800&display=swap");
+@font-face {
+  font-family: "Core Sans C";
+  src: url("../fonts/CoreSansC-55Medium.woff") format("woff2"), url("../fonts/CoreSansC-55Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Core Sans C";
+  src: url("../fonts/CoreSansC-65Bold.woff2") format("woff2"), url("../fonts/CoreSansC-65Bold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Core Sans C";
+  src: url("../fonts/CoreSansC-75ExtraBold.woff2") format("woff2"),
+    url("../fonts/CoreSansC-75ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Causten";
+  src: url("../fonts/Causten-Bold.woff2") format("woff2"), url("../fonts/Causten-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Causten";
+  src: url("../fonts/Causten-Medium.woff2") format("woff2"), url("../fonts/Causten-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  color: #fff;
+  font-family: "Core Sans C";
+  line-height: normal;
+}
+[class*="__container"] {
+  max-width: 1270px;
+  margin: 0 auto;
+  padding: 100px 15px;
+  @media (max-width: 767.98px) {
+    padding: 30px 15px;
+  }
+}
+.saving {
+  &__title {
+    background: url("../img/New_Arrival/newarrival.svg") 0 0/6px 30px / no-repeat;
+    color: #3c4242;
+    font-family: "Core Sans C";
+    font-size: 34px;
+    font-weight: 600;
+    line-height: 0.98;
+    letter-spacing: 0.68px;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 20px;
+  }
+
+  &__card {
+    position: relative;
+
+    display: flex;
+    grid-column: span 4;
+    min-height: 393px;
+    padding: 16% 25px 10% 20px;
+    justify-content: flex-end;
+
+    color: #3c4242;
+
+    border-radius: 12px;
+    overflow: hidden;
+
+    &--white-mod {
+      color: #fff;
+    }
+
+    &--text-align-mod {
+      text-align: right;
+    }
+
+    &--left-mod {
+      justify-content: flex-start;
+    }
+
+    &--big-mod {
+      grid-column: span 6;
+      padding: 7.38% 15.78%;
+    }
+  }
+
+  // .saving__label
+  &__label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 34px;
+    padding: 8px;
+	 margin-top: -35px;
+
+    font-family: "Causten", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+	 line-height: 1;
+
+    background-color: #3c4242;
+    border-radius: 4px;
+  }
+
+  &__card-content {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 164px;
+
+    .saving__card--text-align-mod & {
+      align-items: flex-end;
+    }
+
+    > *:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__card-image {
+  }
+
+  &__card-photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  &__card-name {
+    font-family: "Core Sans C";
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.37;
+    letter-spacing: 0.56px;
+  }
+
+  &__card-slogan {
+    font-family: "Causten", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    .saving__card--big-mod & {
+      font-size: 16px;
+    }
+  }
+
+  &__card-offer {
+    font-family: "Causten", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+
+    .saving__card--big-mod & {
+      font-size: 20px;
+    }
+  }
+
+  &__card-arrow-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  &__card-arrow-image {
+    margin-bottom: 30px;
+
+    animation: move-arrow 3s ease-in-out infinite;
+
+    &:not(.saving__card--white-mod &) {
+      filter: invert(0.7);
+    }
+
+    @keyframes move-arrow {
+      0% {
+        transform: translateY(-2px);
+      }
+      50% {
+        transform: translateY(2px);
+      }
+      100% {
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  &__card-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 25px;
+
+    font-family: "Causten", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+
+    border: 1px solid #3c4242;
+    border-radius: 4px;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    .saving__card--white-mod & {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .saving__card--big-mod & {
+      font-weight: 600;
+
+      border-width: 2px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: #fff;
+      background-color: #3c4242;
+
+      .saving__card--white-mod & {
+        color: #3c4242;
+        background-color: #fff;
+      }
+    }
+  }
+}
